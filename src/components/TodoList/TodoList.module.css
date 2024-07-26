@@ -6,8 +6,3 @@
   margin: 0 auto;
   padding: 20px 0px;
 }
-
-.container {
-  overflow: auto;
-  max-height: 100dvh;
-}
