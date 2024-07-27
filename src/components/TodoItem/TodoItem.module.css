@@ -5,9 +5,15 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+.flexDiv {
+  display: flex;
+  align-items: center;
 }
