@@ -1,9 +1,25 @@
 .container {
-  overflow: auto;
-  max-height: 100dvh;
+  padding: 20px 0px;
 }
+
 .addBtnContainer {
   display: flex;
   justify-content: center;
   padding: 10px 0px;
+}
+
+.loadMoreButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* Adjust  
+ margin as needed */
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 }
