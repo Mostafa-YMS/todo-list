@@ -45,12 +45,26 @@ const TodoPage = () => {
     []
   );
 
+  const onToggle = useCallback(
+    (id) =>
+      id &&
+      setTodos((prev) =>
+        prev.map((todo) => {
+          if (todo.id === id) {
+            return { ...todo, completed: !todo.completed };
+          }
+          return todo;
+        })
+      ),
+    []
+  );
+
   return (
     <div className={styles.container} onScroll={onScroll}>
       <div className={styles.addBtnContainer}>
         <AddTodo onAddTodo={onAddTodo} />
       </div>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onToggle={onToggle} />
       {loading && <div>Loading...</div>}
     </div>
   );

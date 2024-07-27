@@ -1,9 +1,15 @@
+import ToggleCheckBox from "./components/ToggleCheckBox";
 import styles from "./TodoItem.module.css";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, onToggle }) => {
   return (
     <div className={styles.todoCard}>
-      <p>{todo.todo}</p>
+      <ToggleCheckBox
+        checked={todo.completed}
+        onToggle={onToggle}
+        id={todo.id}
+      />
+      <p className={todo.completed ? styles.completed : ""}>{todo.todo}</p>
     </div>
   );
 };
