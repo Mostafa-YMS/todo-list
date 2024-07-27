@@ -59,12 +59,17 @@ const TodoPage = () => {
     []
   );
 
+  const onDelete = useCallback(
+    (id) => id && setTodos((prev) => prev.filter((todo) => todo.id !== id)),
+    []
+  );
+
   return (
     <div className={styles.container} onScroll={onScroll}>
       <div className={styles.addBtnContainer}>
         <AddTodo onAddTodo={onAddTodo} />
       </div>
-      <TodoList todos={todos} onToggle={onToggle} />
+      <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
       {loading && <div>Loading...</div>}
     </div>
   );
