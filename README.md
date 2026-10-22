@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Todo List — React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React task-list application organized around a dedicated todo page and reusable components. The project explores component separation, API communication, and loading additional items on demand.
 
-## Available Scripts
+## Features and implementation notes
 
-In the project directory, you can run:
+- A dedicated todo page composed through the main React application.
+- Separate components for adding a todo, rendering a todo list, and displaying individual todo items.
+- An Axios dependency for HTTP requests.
+- A load-more interaction rather than continuous scroll-triggered loading.
+- Refactoring notes in [DECESIONS.md](./DECESIONS.md) documenting choices made during development.
 
-### `yarn start`
+> Check the current application and service configuration to confirm which operations are available in the configured environment. This README avoids claiming unverified production or deployment behavior.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React 18
+- JavaScript
+- Axios
+- Create React App / `react-scripts`
+- React Testing Library and Jest
 
-### `yarn test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `yarn build`
+- Node.js and npm, or a compatible Node.js package manager.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Using npm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `yarn eject`
+Or, if you prefer Yarn and the lockfile is current:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+yarn install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Start the development server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Create React App development server normally runs at `http://localhost:3000`.
 
-## Learn More
+### Available scripts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the development server |
+| `npm test` | Run tests in interactive watch mode |
+| `npm run build` | Create a production build |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project structure
 
-### Code Splitting
+```text
+src/
+├── components/
+│   ├── AddTodo/
+│   ├── TodoItem/
+│   └── TodoList/
+├── pages/
+│   └── TodoPage/
+├── services/
+├── App.js
+└── index.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Engineering decisions
 
-### Analyzing the Bundle Size
+The accompanying decision notes describe choices such as keeping todo-list rendering reusable, separating page-level logic, memoizing the list after a refactor, avoiding an extra form library for a single input, and using a load-more button to reduce scroll-triggered calls.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Next improvements
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add screenshots or a short demo.
+- Document the expected API and provide a local/mock mode if the external service is unavailable.
+- Add tests for creating, loading, and rendering todos.
+- Document empty, loading, and error states.
+- Add a license if you intend to distribute the project under a specific open-source license.
